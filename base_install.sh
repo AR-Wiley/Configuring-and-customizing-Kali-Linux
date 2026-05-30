@@ -35,7 +35,7 @@ function validate_log_file {
 
 function verify_apt {
 
-        if ! dpkg -s "$apt"; then
+        if command -v -s "$apt"; then
                 echo "$apt is not installed"
                 exit 1
         fi
