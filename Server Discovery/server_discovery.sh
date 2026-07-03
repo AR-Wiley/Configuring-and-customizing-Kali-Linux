@@ -10,9 +10,16 @@ targets=('https://httpbin.org'
         'https://api.open-meteo.com'
         'https://restcountries.com')
 
-declare -A servers
-
 file="/home/wiley/test.txt"
+
+function validate_log_file {
+
+        if [ ! -e "$file" ]; then
+                echo "Creating file: $file"
+                touch "$file"
+        fi
+
+}
 
 function validate_network {
 
